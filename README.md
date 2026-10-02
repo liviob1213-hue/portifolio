@@ -56,6 +56,37 @@ nada de ícone quebrado. Os vídeos são mudos e só carregam quando aparecem na
 | Cartões empilhando | `Process.tsx` | `position: sticky` + `scale` por scroll |
 | Botão magnético | `Contact.tsx` | atração pelo cursor via `quickTo` |
 
+## Publicar mudanças (GitHub + Vercel)
+
+O repositório é [`liviob1213-hue/portifolio`](https://github.com/liviob1213-hue/portifolio).
+Fluxo normal de atualização:
+
+```bash
+npm run dev            # veja a mudança em http://localhost:4311
+git status             # confira o que mudou
+git add -A
+git commit -m "ajuste: novo projeto no portfólio"
+git push
+```
+
+Depois de conectado na Vercel, **cada `git push` na branch `main` publica o site sozinho** —
+não precisa buildar nada na mão nem arrastar pasta para lugar nenhum.
+
+### Conectar na Vercel (uma vez)
+
+1. [vercel.com/new](https://vercel.com/new) → importar o repositório `portifolio`.
+2. A Vercel detecta o Next.js sozinho. Pode deixar tudo no padrão.
+3. Deploy. A partir daí todo push em `main` vira uma publicação nova.
+
+> A porta `4311` só existe no `npm run dev` (definida no `package.json`). Em produção a
+> Vercel escolhe a porta dela, então isso não interfere no deploy.
+
+### Vídeos e fotos no repositório
+
+Vídeos grandes (acima de ~50 MB) deixam o repositório pesado e a Vercel tem limite de
+tamanho por arquivo no upload via Git. Prefira arquivos comprimidos ou hospede o vídeo
+fora (YouTube/Vimeo/Cloudflare Stream) e coloque só o link no `site.ts`.
+
 ## Evento interno
 
 O preloader dispara `portfolio:ready` no `window` quando termina. O Hero, o menu e o
