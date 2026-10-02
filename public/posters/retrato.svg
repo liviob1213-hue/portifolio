@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1b22"/><stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f5bff" stop-opacity="0.55"/><stop offset="1" stop-color="#d4ff4f" stop-opacity="0.25"/>
+    </linearGradient>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f2efe9" stroke-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <rect width="900" height="1200" fill="url(#g)"/>
+  <g fill="url(#fig)">
+    <circle cx="450" cy="470" r="150"/>
+    <path d="M180 1200 C180 880 300 720 450 720 C600 720 720 880 720 1200 Z"/>
+  </g>
+  <g stroke="#d4ff4f" stroke-opacity="0.6" fill="none"><path d="M80 1110H820"/></g>
+  <text x="80" y="150" fill="#f2efe9" fill-opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="10">AQUI ENTRA SUA FOTO</text>
+  <text x="80" y="1160" fill="#f2efe9" fill-opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="6">/public/images/retrato.jpg</text>
+</svg>

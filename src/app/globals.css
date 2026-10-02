@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TEMA — mude as cores aqui e a página inteira acompanha
+   ============================================================ */
+@theme {
+  --color-ink: #050506;
+  --color-ink-2: #0a0a0d;
+  --color-ink-3: #121216;
+  --color-bone: #f2efe9;
+  --color-mute: #8f8c85;
+  --color-acid: #d4ff4f;
+  --color-ember: #ff6a2b;
+  --color-haze: #6f5bff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-editorial), Georgia, serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  /* clip (e não hidden) para não criar contexto de rolagem e não quebrar o pin do ScrollTrigger */
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: #26262c;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a42;
+}
+
+/* Lenis (smooth scroll) — precisa destas regras para não brigar com o scroll nativo */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============================================================
+   TIPOGRAFIA / COMPONENTES VISUAIS
+   ============================================================ */
+
+/* Título gigante, apertado, estilo estúdio */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+
+/* Texto vazado (contorno) */
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 239, 233, 0.38);
+}
+.stroke-text-acid {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--color-acid) 70%, transparent);
+}
+
+/* Útil para revelar linhas: o texto sobe por dentro de uma máscara */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.line-mask > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Linhas de apoio */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(242, 239, 233, 0.22) 20%,
+    rgba(242, 239, 233, 0.22) 80%,
+    transparent
+  );
+}
+
+/* Vidro */
+.glass {
+  background: rgba(10, 10, 13, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Grão de filme — dá o acabamento cinematográfico */
+.grain {
+  position: fixed;
+  inset: -150%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.6s steps(2) infinite;
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2%, 1%);
+  }
+  50% {
+    transform: translate(1%, -2%);
+  }
+  75% {
+    transform: translate(-1%, 2%);
+  }
+  100% {
+    transform: translate(2%, 1%);
+  }
+}
+
+/* Brilho suave de fundo */
+.glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+/* Máscara de fade nas bordas dos marquees */
+.edge-fade {
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Cursor customizado: esconde o nativo em telas com mouse */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

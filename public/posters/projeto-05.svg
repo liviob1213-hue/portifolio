@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1a12"/><stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g stroke="#f2efe9" stroke-opacity="0.08">
+    <path d="M0 260H1600M0 460H1600M0 660H1600"/>
+  </g>
+  <g fill="#f2efe9" fill-opacity="0.13">
+    <rect x="180" y="200" width="520" height="120" rx="28"/><rect x="240" y="350" width="640" height="120" rx="28"/>
+  </g>
+  <g fill="#d4ff4f" fill-opacity="0.9">
+    <rect x="860" y="500" width="560" height="120" rx="28"/>
+  </g>
+  <g fill="#d4ff4f" fill-opacity="0.35">
+    <rect x="980" y="650" width="440" height="90" rx="24"/>
+  </g>
+  <g fill="#f2efe9" fill-opacity="0.5">
+    <rect x="215" y="240" width="380" height="16" rx="6"/><rect x="215" y="270" width="260" height="16" rx="6"/>
+    <rect x="275" y="390" width="460" height="16" rx="6"/><rect x="275" y="420" width="320" height="16" rx="6"/>
+  </g>
+  <g fill="#050506" fill-opacity="0.75">
+    <rect x="895" y="540" width="420" height="16" rx="6"/><rect x="895" y="570" width="300" height="16" rx="6"/>
+  </g>
+  <g stroke="#d4ff4f" stroke-opacity="0.7" fill="none"><path d="M180 760H1420"/></g>
+  <text x="180" y="140" fill="#d4ff4f" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="10">AGENTE DE WHATSAPP</text>
+  <text x="180" y="850" fill="#f2efe9" fill-opacity="0.75" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="52">ATENDE, QUALIFICA E PASSA PARA HUMANO</text>
+</svg>

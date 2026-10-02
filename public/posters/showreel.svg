@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2408"/><stop offset="0.5" stop-color="#0a0a0d"/><stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="b1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4ff4f" stop-opacity="0.35"/><stop offset="1" stop-color="#d4ff4f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="url(#b1)">
+    <rect x="0" y="250" width="1600" height="34"/><rect x="0" y="330" width="1120" height="18"/>
+    <rect x="0" y="392" width="880" height="8"/><rect x="0" y="560" width="1400" height="14"/>
+  </g>
+  <g fill="#f2efe9" fill-opacity="0.14">
+    <rect x="1120" y="330" width="240" height="18"/><rect x="880" y="392" width="360" height="8"/>
+  </g>
+  <rect x="96" y="640" width="1408" height="2" fill="#d4ff4f" fill-opacity="0.5"/>
+  <text x="96" y="200" fill="#f2efe9" fill-opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="14">REEL DE PROJETOS</text>
+  <text x="96" y="760" fill="#f2efe9" fill-opacity="0.85" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="86" letter-spacing="-2">TUDO COMEÇOU COM UMA DOR</text>
+</svg>
