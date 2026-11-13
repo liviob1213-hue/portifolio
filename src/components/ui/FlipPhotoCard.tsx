@@ -47,6 +47,18 @@ export default function FlipPhotoCard({
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const [finePointer, setFinePointer] = useState(true);
+  const photoRef = useRef<HTMLImageElement>(null);
+
+  /**
+   * Foto que já chegou do cache antes da hidratação nunca dispara `onLoad` —
+   * sem isso o placeholder ficaria por cima da foto para sempre.
+   */
+  useEffect(() => {
+    const img = photoRef.current;
+    if (!img || !img.complete) return;
+    if (img.naturalWidth > 0) setLoaded(true);
+    else setFailed(true);
+  }, []);
 
   /** Card flutuante: sobe, inclina e ganha luz conforme o mouse se move. */
   useEffect(() => {
@@ -163,6 +175,7 @@ export default function FlipPhotoCard({
 
               {!failed && (
                 <img
+                  ref={photoRef}
                   src={src}
                   alt={alt}
                   loading="lazy"
